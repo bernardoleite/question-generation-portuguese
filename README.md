@@ -61,7 +61,7 @@ This project is released under the **General Public License Version 3.0 (or late
 Additionaly, this project includes third party software components: [stanfordnlp](https://github.com/stanfordnlp/stanfordnlp), [stanfordner](https://nlp.stanford.edu/software/CRF-NER.html), [nlpnet](https://github.com/erickrf/nlpnet), and this [ner portuguese model](https://rdm.inesctec.pt/pt_PT/dataset/cs-2017-005/resource/5456d599-8aed-49ed-b77c-6f66fe97cfbe) from this [masters thesis](https://github.com/arop/ner-re-pt). Each of these components have their own license. Please see [stanfordnlp/license](https://github.com/stanfordnlp/stanfordnlp/blob/master/LICENSE), [stanfordner](TODO), [nlpnet](https://github.com/erickrf/nlpnet/blob/master/LICENSE.txt), and the [ner portuguese model](https://rdm.inesctec.pt/pt_PT/dataset/cs-2017-005/resource/5456d599-8aed-49ed-b77c-6f66fe97cfbe) correspondingly.
 
 ### Commercial Purposes
-A commercial license may also be available for use in industrial projects and collaborations that do not wish to use the GPL v3 (or later). Please contact the author if you are interested.
+A commercial license may also be available for use in industrial projects, collaborations or distributors of proprietary software that do not wish to use the GPL v3 (or later). Please contact the author if you are interested.
 
 ## References
 If you use this software in your work, please kindly cite our research:
