@@ -13,6 +13,7 @@ import stanfordnlp
 from stanfordnlp.utils.resources import DEFAULT_MODEL_DIR
 
 import concurrent.futures
+import config
 
 currentDirectory = os.getcwd()
 
@@ -27,7 +28,7 @@ stanfordnlp.download('pt', models_dir, confirm_if_exists=False)
 from nltk.tag import StanfordNERTagger
 
 if os.name == 'nt':
-    java_path = "D:/JAVA/bin/java.exe"
+    java_path = config.JAVA_PATH
     os.environ['JAVAHOME'] = java_path
 
 stanford_classifier = currentDirectory + '/gen_module/utils/stanford-ner/classifiers/portugueseHarem.ser.gz'
@@ -128,7 +129,7 @@ def calcSyllables(token_text):
 def produceNER(all_sents_tagPtList, textStruct):
     #classified_text = st.tag(self.tagPtList) # [('D.', 'PESSOA'), ('Afonso', 'PESSOA'), ('Henriques', 'PESSOA'), ('foi', 'O'), ('o', 'O'), ('primeiro', 'O'), ('rei', 'O'), ('de', 'O'), ('Portugal', 'LOCAL'), ('e', 'O'), ('a', 'O'), ('Maria', 'PESSOA'), ('é', 'O'), ('minha', 'O'), ('amiga', 'O'), ('.', 'O')]
 
-    print(all_sents_tagPtList)
+    #print(all_sents_tagPtList)
 
     with concurrent.futures.ThreadPoolExecutor() as executor:
         future = executor.submit(foo, all_sents_tagPtList)

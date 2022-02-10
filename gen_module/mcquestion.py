@@ -43,5 +43,5 @@ class McQuestion:
     for mc_option in self.mc_options:
       question_string = question_string + "\n" + mc_option["text"]
     question_string = question_string + "\n"
-    question_string = question_string + "\n" + "Dificuldade: " + str(self.diff) + "\n"
+    question_string = question_string + "\n" + "Dificuldade: " + str(self.diff) + "\n" + "Tipo de questão: " + str(self.mc_type) + "\n"
     return question_string

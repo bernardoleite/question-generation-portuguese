@@ -1,0 +1,1 @@
+JAVA_PATH = "D:/JAVA/bin/java.exe"

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Quizz</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../static/quizz.css" />
+  </head>
+  <body>
+    {% include 'includes/_navbar.html' %}
+    <div class="container">
+
+      {% include 'includes/_messages.html' %}
+
+    <h2 style="text-align:center; font-weight: bold">Compreensão da Leitura</h2>
+    {% for item in data['rc'] %}
+
+      <div class="row">
+        <div class="column">
+          <div class="card">
+            <h5>Questão: {{item.question_text}}</h5>
+            <p><i>{{item.sent_text}}</i></p>
+          </div>
+        </div>
+      </div>
+
+    {% endfor %}
+
+    <h2 style="text-align:center; font-weight: bold">Gramática</h2>
+    {% for item in data['grammar'] %}
+
+    {% if item.type == "mc_choice" and (item.mc_type == "g_verbfeats" or item.mc_type == "g_verbstype")  %}
+      <div class="row">
+        <div class="column">
+          <div class="card">
+            <h5><i>{{item.gui_sent}}</i></h5>
+            <h5>{{item.gui_quest}}</h5>
+              <ol type="A" style="text-align: left;">
+              {% for mc_option in item.mc_options %}
+                <li><i>{{mc_option['text']}}</i></li>
+              {% endfor %}
+              </ol>
+          </div>
+        </div>
+      </div>
+
+    {% elif item.type == "cloze" %}
+      <div class="row">
+        <div class="column">
+          <div class="card">
+            <h5>Complete a seguinte frase com a forma do verbo indicado entre parênteses, no tempo e modo referidos.</h5>
+            <h5>{{item.stat_text}}</h5>
+            <p><i>{{item.cloze_question}}</i></p>
+          </div>
+        </div>
+      </div>
+      
+    {% else %}
+      <div class="row">
+        <div class="column">
+          <div class="card">
+            <h5>{{item.stat_text}}</h5>
+              <ol type="A" style="text-align: left;">
+              {% for mc_option in item.mc_options %}
+                <li><i>{{mc_option['text']}}</i></li>
+              {% endfor %}
+              </ol>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+
+    {% endfor %}
+
+    <h2 style="text-align:center">Referenciação de Pronomes</h2>
+    {% for item in data['pronref'] %}
+
+    <div class="row">
+      <div class="column">
+        <div class="card">
+          <h6><i>{{item.gui_sent}}</i></h6>
+          <h5>{{item.gui_quest}}</h5>
+            <ol type="A" style="text-align: left;">
+            {% for mc_option in item.mc_options %}
+              <li><i>{{mc_option['text']}}</i></li>
+            {% endfor %}
+            </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    {% endfor %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

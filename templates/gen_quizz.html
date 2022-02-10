@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Generate Quizz</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/style.css" />
+  </head>
+  <body>
+    {% include 'includes/_navbar.html' %}
+    <div class ="container">
+        {% include 'includes/_messages.html' %}
+        <h1>Gerar Questionário</h1>
+        <form action="/gen_quizz" method="POST">
+  
+        <div class="form-group">
+          <h3>Que tipo de questões pretende gerar?</h3>
+  
+          <fieldset class="floral">
+          
+                <li>
+                    <input type="checkbox" class="familybox cbox"/>
+                    Gramática
+                    <ul>
+                        <li>
+                          <input type="checkbox" class="cbox mainoption" name="g_sequence" value="yes"/>
+                          Sequência morfológica    
+                        </li>
+                        <li>
+                          <input type="checkbox" class="cbox mainoption" name="g_types" value="yes"/>
+                          Determinantes, pronomes, advérbios e conjunções
+                        </li>
+                        <li>
+                          <input type="checkbox" class="cbox mainoption" name="g_prepdetpron" value="yes"/>
+                          Determinantes, pronomes e preposições (a)
+                        </li>
+                        <li>
+                          <input type="checkbox" class="cbox mainoption" name="g_verbfeats" value="yes"/>
+                          Verbos - Identificar os tempos e modos verbais indicados
+                        </li>
+                        <li>
+                          <input type="checkbox" class="cbox mainoption" name="g_completeverb" value="yes"/>
+                          Verbos - Completar com os tempos e modos verbais indicados
+                        </li>
+                        <li>
+                          <input type="checkbox" class="cbox mainoption" name="g_verbsmood" value="yes"/>
+                          Verbos - Identificar as formas verbais pertencentes ao mesmo modo verbal
+                        </li>
+                        <li>
+                          <input type="checkbox" class="cbox mainoption" name="g_verbstype" value="yes"/>
+                          Verbos - Identificar a subclasse das formas verbais indicadas
+                        </li>
+                        <li>
+                          <input type="checkbox" class="cbox mainoption" name="g_simplecomplex" value="yes"/>
+                          Frases simples e complexas
+                        </li>
+                    </ul>
+                </li>
+  
+                <li>
+                  <input type="checkbox" class="familybox cbox"/>
+                  Compreensão da Leitura
+                  <ul>
+                      <li>
+                        <input type="checkbox" class="cbox mainoption" name = "rc_facts" value ="yes"/>
+                        Identificação (pessoas, organizações, acontecimentos, valores)
+                      </li>
+                      <li>
+                        <input type="checkbox" class="cbox mainoption" name = "rc_whenwhere" value ="yes"/>
+                        Localização no tempo e no espaço
+                      </li>
+                      <li>
+                        <input type="checkbox" class="cbox mainoption" name = "rc_how" value ="yes"/>
+                        Caracterização/Descrição
+                    </li>
+                    <li>
+                        <input type="checkbox" class="cbox mainoption" name = "rc_why" value ="yes"/>
+                        Causa/Motivo
+                  </li>
+                  </ul>
+              </li>
+  
+              <li>
+                <input type="checkbox" class="familybox cbox" name = "pronoun_reference" value ="yes"/>
+                Referenciação de Pronomes
+            </li>
+           
+        </fieldset>
+  
+        </div>
+  
+          <div class="form-group">
+            <h3>Quantas questões pretende gerar (por tipo de pergunta) ?</h3>
+            <select name="nr_quest">
+              <option value="">Selecione uma opção</option>
+              <option value="nrquest_5">Até 5 questões.</option>
+              <option value="nrquest_10">Até 10 questões.</option>
+              <option value="nrquest_20">Até 20 questões.</option>
+              <option value="nrquest_50">Até 50 questões.</option>
+              <option value="nrquest_inf">Tantas quanto possível.</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <h3>Prentende obter questões com...</h3>
+            <select name="diff">
+              <option value="">Selecione uma opção</option>
+              <option value="diff_harder">maior grau de dificuldade</option>
+              <option value="diff_easier">menor grau de dificuldade</option>
+              <option value="diff_random">dificuldade aleatória</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <h3>Coloque aqui o seu texto</h3>
+            <textarea
+              name="text_gen"
+              id=""
+              cols="30"
+              rows="10"
+              placeholder="Escreva aqui uma ou mais frases."
+            ></textarea>
+          </div>
+          <input type="submit"  value="Gerar Questionário" class="btn" onclick="$('#loading').show(); style.display ='none'"/>
+          <div id="loading" style="display:none; text-align:center;"><img sty src="../static/loading.gif" alt="" /></div>
+        </form>
+    </div>
+  </body>
+
+    <script>
+
+    $(document).ready(function () {
+                $.extend($.expr[':'], {
+                    unchecked: function (obj) {
+                        return ((obj.type == 'checkbox' || obj.type == 'radio') && !$(obj).is(':checked'));
+                    }
+                });
+    
+                $(".floral input:checkbox").live('change', function () {
+                    $(this).next('ul').find('input:checkbox').prop('checked', $(this).prop("checked"));
+    
+                    for (var i = $('.floral').find('ul').length - 1; i >= 0; i--) {
+                        $('.floral').find('ul:eq(' + i + ')').prev('input:checkbox').prop('checked', function () {
+                            return $(this).next('ul').find('input:unchecked').length === 0 ? true : false;
+                        });
+                    }
+                });
+            });
+       
+    
+    </script>
+</html>

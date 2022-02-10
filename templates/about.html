@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>About</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  </head>
+  <body>
+    {% include 'includes/_navbar.html' %}
+    <div class ="container">
+        <h1>Sobre Nós</h1>
+        <p>
+          Apresentamos uma ferramenta capaz de gerar questões em Português, de forma automática e com controlo da dificuldade. A nossa metodologia permite gerar questões sobre (A) Gramática, (B) Compreensão de Leitura e (C) Referenciação de Pronomes. A primeira abordagem (A) permite gerar questões gramaticais. Para isso, seguimos uma técnica baseada em regras, para a qual foram estabelecidas regras bem definidas, de acordo com a gramática portuguesa. A segunda abordagem (B) visa gerar questões de compreensão de leitura (factuais) e, para tal, foram testados cinco métodos diferentes. O primeiro faz uma análise baseada em sintaxe, utilizando as informações obtidas através do analisador morfológico e do reconhecimento de entidades mencionadas. O segundo elabora uma análise semântica das frases, através da rotulagem dos papéis semânticos. O terceiro método extrai as relações de dependências inerentes às frases, através da Análise de Dependências. O quarto tira proveito dos pronomes e advérbios relativos encontrados nas frases. O quinto explora a utilidade dos conectores de discurso. Finalmente, para a última abordagem (C), foram criadas perguntas sobre referenciação de pronomes, nas quais, para além das perguntas geradas, são também geradas as passagens de texto a partir das quais surgem as questões. Foram estabelecidas funções heurísticas que atribuem valores de dificuldade para cada uma das perguntas.
+        </p>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

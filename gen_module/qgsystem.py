@@ -50,13 +50,13 @@ class QgSystem:
         for group_requests in self.list_requests:
             if group_requests['type'] == 'grammar':
                 grammar_questions = self.produceGrammar(group_requests, copy.deepcopy(self.my_text))
-                #self.writeQuestionsFile(group_requests['type'], grammar_questions)
+                self.writeQuestionsFile(group_requests['type'], grammar_questions)
             elif group_requests['type'] == 'reading_comprehension':
                 rc_questions = self.produceReadingC(group_requests, copy.deepcopy(self.my_text), list_rc, nr_quest)
-                #self.writeQuestionsFile(group_requests['type'], rc_questions)
+                self.writeQuestionsFile(group_requests['type'], rc_questions)
             elif group_requests['type'] == 'pronoun_reference':
                 pronref_questions = self.producePronounReference(group_requests, copy.deepcopy(self.my_text))
-                #self.writeQuestionsFile(group_requests['type'], pronref_questions)
+                self.writeQuestionsFile(group_requests['type'], pronref_questions)
             else:
                 pass
 

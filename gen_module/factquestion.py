@@ -33,5 +33,5 @@ class FactQuestion:
     
     def getQuestion(self):
         question_text = self.tokens2string()
-        question_string = "\n Frase: " + self.sent_text + "\n Questão: " + question_text + "\n Resposta: " + self.fact_answer + "\n Dificuldade: " + str(self.diff) + "\n Estado: " + self.state +  "\n" 
+        question_string = "\n Frase: " + self.sent_text + "\n Questão: " + question_text + "\n Resposta: " + self.fact_answer + "\n Dificuldade: " + str(self.diff) + "\n Tipo de questão: " + self.fact_type + "\n Subtipo de questão: " + self.fact_subtype + "\n Estado: " + self.state +  "\n" 
         return question_string
