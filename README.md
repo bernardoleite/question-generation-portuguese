@@ -35,7 +35,7 @@ Java
     ```python
     git clone https://github.com/bernardoleite/question-generation-portuguese
     ```
-3. Install the Python packages from [requirements.txt](https://github.com/bernardoleite/question-generation-portuguese/requirements.txt). If you are using a virtual environment for Python package management, you can install all python packages needed by using the following bash command:
+3. Install the Python packages from [requirements.txt](https://github.com/bernardoleite/question-generation-portuguese/blob/main/requirements.txt). If you are using a virtual environment for Python package management, you can install all python packages needed by using the following bash command:
     ```bash
     cd question-generation-portuguese/
     pip install -r requirements.txt
@@ -136,10 +136,10 @@ If you have a suggestion that would make this better, please fork the repo and c
 
 ## License
 ### Project
-This project is released under the **General Public License Version 3.0 (or later)**. For details, please see the file [LICENSE](https://github.com/bernardoleite/question-generation-portuguese/LICENSE) in the root directory.
+This project is released under the **General Public License Version 3.0 (or later)**. For details, please see the file [LICENSE](https://github.com/bernardoleite/question-generation-portuguese/blob/main/LICENSE) in the root directory.
 
 ### Third Party Components
-Additionaly, this project includes third party software components: [stanfordnlp](https://github.com/stanfordnlp/stanfordnlp), [stanfordner](https://nlp.stanford.edu/software/CRF-NER.html), [nlpnet](https://github.com/erickrf/nlpnet), and this [ner portuguese model](https://rdm.inesctec.pt/pt_PT/dataset/cs-2017-005/resource/5456d599-8aed-49ed-b77c-6f66fe97cfbe) from this [masters thesis](https://github.com/arop/ner-re-pt). Each of these components have their own license. Please see [stanfordnlp/license](https://github.com/stanfordnlp/stanfordnlp/blob/master/LICENSE), [stanfordner](https://github.com/bernardoleite/question-generation-portuguese/gen_module/utils/stanford-ner/LICENSE.txt), [nlpnet](https://github.com/erickrf/nlpnet/blob/master/LICENSE.txt), and the [ner portuguese model](https://rdm.inesctec.pt/pt_PT/dataset/cs-2017-005/resource/5456d599-8aed-49ed-b77c-6f66fe97cfbe) correspondingly.
+Additionaly, this project includes third party software components: [stanfordnlp](https://github.com/stanfordnlp/stanfordnlp), [stanfordner](https://nlp.stanford.edu/software/CRF-NER.html), [nlpnet](https://github.com/erickrf/nlpnet), and this [ner portuguese model](https://rdm.inesctec.pt/pt_PT/dataset/cs-2017-005/resource/5456d599-8aed-49ed-b77c-6f66fe97cfbe) from this [masters thesis](https://github.com/arop/ner-re-pt). Each of these components have their own license. Please see [stanfordnlp/license](https://github.com/stanfordnlp/stanfordnlp/blob/master/LICENSE), [stanfordner](https://github.com/bernardoleite/question-generation-portuguese/blob/main/gen_module/utils/stanford-ner/LICENSE.txt), [nlpnet](https://github.com/erickrf/nlpnet/blob/master/LICENSE.txt), and the [ner portuguese model](https://rdm.inesctec.pt/pt_PT/dataset/cs-2017-005/resource/5456d599-8aed-49ed-b77c-6f66fe97cfbe) correspondingly.
 
 ### Commercial Purposes
 A commercial license may also be available for use in industrial projects, collaborations or distributors of proprietary software that do not wish to use the GPL v3 (or later). Please contact the author if you are interested.
