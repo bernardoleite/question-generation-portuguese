@@ -1,7 +1,7 @@
 # Automatic Question Generation & Difficulty Control for the Portuguese Language
 
 <p align="center">
-    <img src="images/demo-aquaplan_F26G8LqH.gif" style="width: 50%; height: 50%" />
+    <img src="images/demo-aquaplan_F26G8LqH.gif" style="width: 70%; height: 70%" />
 </p>
 
 ## Overview - English
@@ -67,7 +67,7 @@ You can use this software via **web application** or via **code** with `demo.py`
     ```
     Open a browser at the given link. You should see the homepage:
 
-    <img src="images/homepage.png" style="width: 40%; height: 40%" />
+    <img src="images/homepage.PNG" style="width: 40%; height: 40%" />
 
 
 ### Via code with demo.py
