@@ -1,4 +1,4 @@
-gen_module/utils/nlpnet
+#gen_module/utils/nlpnet
 gen_module/utils/models
 
 # Byte-compiled / optimized / DLL files
