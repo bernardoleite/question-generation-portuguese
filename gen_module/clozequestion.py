@@ -10,5 +10,5 @@ class ClozeQuestion:
         self.cloze_diff = cloze_diff
     
     def getQuestion(self):
-        question_string = "\n" + self.stat_text + "\n" + self.cloze_question + "\n"
+        question_string = "\n" + self.stat_text + "\n" + self.cloze_question + "\n Resposta: " +  self.cloze_answer + "\n Dificuldade: " + str(self.cloze_diff)
         return question_string
