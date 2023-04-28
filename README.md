@@ -147,6 +147,18 @@ A commercial license may also be available for use in industrial projects, colla
 ## References
 If you use this software in your work, please kindly cite our research:
 ```bibtex
+@inproceedings{leite2023_rules,
+    author={Bernardo Leite. and Henrique Cardoso.},
+    title={Do Rules Still Rule? Comprehensive Evaluation of a Rule-Based Question Generation System},
+    booktitle={Proceedings of the 15th International Conference on Computer Supported Education - Volume 2: CSEDU,},
+    year={2023},
+    pages={27-38},
+    publisher={SciTePress},
+    organization={INSTICC},
+    doi={10.5220/0011852100003470},
+    isbn={978-989-758-641-5},
+    issn={2184-5026},
+}
 @mastersthesis{leite2020_ms,
     author = {Bernardo Leite},
     booktitle = {Dissertation for obtaining the Master Degree in Informatics and Computing Engineering},
@@ -156,15 +168,6 @@ If you use this software in your work, please kindly cite our research:
     day = {20},
     month = {07},
     year = {2020}
-}
-
-@inproceedings{leite2020_factoid,
-    title={Factual Question Generation for the Portuguese Language},
-    author={Leite, Bernardo and Cardoso, Henrique Lopes and Reis, Lu{\'\i}s Paulo and Soares, Carlos},
-    booktitle={2020 International Conference on INnovations in Intelligent SysTems and Applications (INISTA)},
-    pages={1--7},
-    year={2020},
-    organization={IEEE}
 }
 ```
 Also consider citing the third party software components. Please, see on their respective pages -- links above.
